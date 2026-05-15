@@ -1,7 +1,7 @@
 import ballerina/http;
 import ballerina/log;
 
-listener http:Listener httpDefaultListener = http:getDefaultListener();
+listener http:Listener httpDefaultListener = new (9090);
 
 service / on httpDefaultListener {
     resource function get getCharData/[string id]() returns json|error {
@@ -23,3 +23,20 @@ service / on httpDefaultListener {
     }
 
 }
+
+listener http:Listener httpDefaultListener1 = new (8080);
+
+service /health on httpDefaultListener1 {
+    resource function get .() returns json|error {
+        do {
+            return {
+                "ok": true
+            };
+        } on fail error err {
+            // handle error
+            return error("unhandled error", err);
+        }
+    }
+
+}
+

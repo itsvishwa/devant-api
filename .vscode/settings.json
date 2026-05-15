@@ -1,6 +1,6 @@
 
 {
     "ballerina.isBI": true,
-    "ballerina.enableRunFast": true,
+    // "ballerina.enableRunFast": true,
     "redhat.telemetry.enabled": false
 }
