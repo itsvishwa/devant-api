@@ -11,7 +11,7 @@ service / on httpDefaultListener {
             log:printInfo(characterName);
 
             if res.status == "Alive" {
-                return {"message": "The character is alive!"};
+                return {"message": "The character is alive....!"};
             } else {
                 return {"message": "The character is not alive."};
             }
